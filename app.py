@@ -101,7 +101,7 @@ def feedback():
     remedy_index = data.get('remedy_index')
 
     if not disease or not remedy_index:
-        return jsonify({"message": "Feedback received and remedies updated successfully"}), 400
+        return jsonify({"error": "this index of disease and remedies not found"}), 400
 
     update_remedies(filepath, disease, remedy_index)
     return jsonify({"message": "Feedback received and remedies updated successfully"}), 200
